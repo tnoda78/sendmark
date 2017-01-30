@@ -5,7 +5,13 @@ describe Sendmark do
     expect(Sendmark::VERSION).not_to be nil
   end
 
-  it "does something useful" do
-    expect(false).to eq(true)
+  describe ".new" do
+    subject do
+      Sendmark.new
+    end
+
+    it "creates Sendmark::Mail object" do
+      is_expected.to be_kind_of Sendmark::Mail
+    end
   end
 end
