@@ -1,5 +1,8 @@
 # Sendmark
 
+[![Gem Version](https://badge.fury.io/rb/sendmark.svg)](https://badge.fury.io/rb/sendmark)
+[![Build Status](https://travis-ci.org/tnoda78/sendmark.svg?branch=master)](https://travis-ci.org/tnoda78/sendmark)
+
 Send email by markdown text.
 
 ## Installation
