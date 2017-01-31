@@ -11,8 +11,8 @@ require "sendmark/markdown"
 
 module Sendmark
   class << self
-    def new
-      Sendmark::Mail.new
+    def new(args, &block)
+      Sendmark::Mail.new(args, &block)
     end
   end
 end

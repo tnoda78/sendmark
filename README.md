@@ -14,7 +14,7 @@ gem install sendmark
 ## Usage
 
 ```
-mail = Sendmark::Mail.new(
+mail = Sendmark.new(
   to: ["to@example.com"],
   from: "from@example.com",
   subject: "subject",

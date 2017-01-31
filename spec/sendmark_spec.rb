@@ -7,7 +7,13 @@ describe Sendmark do
 
   describe ".new" do
     subject do
-      Sendmark.new
+      Sendmark.new(
+        to: ["to@example.com"],
+        from: "from@example.com",
+        subject: "subject",
+        css: "h1 { color: #000000; }",
+        markdown: "# H1"
+      )
     end
 
     it "creates Sendmark::Mail object" do
