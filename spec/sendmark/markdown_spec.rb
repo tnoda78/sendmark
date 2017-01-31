@@ -3,6 +3,9 @@ require "spec_helper"
 describe Sendmark::Markdown do
   let(:css) do
     <<-EOF
+body {
+  background-color: #000000;
+}
 h1 {
   color: #111111;
   background-color: #111111;
@@ -62,7 +65,7 @@ a {
 
       context "with css" do
         it "returns converted html" do
-          is_expected.to eq "<h1 style=\"color: #111111; background-color: #111111;\">heading1</h1>"
+          is_expected.to eq "<body style=\"background-color: #000000;\"><h1 style=\"color: #111111; background-color: #111111;\">heading1</h1></body>"
         end
       end
 
@@ -70,7 +73,7 @@ a {
         let(:css) { not_css }
 
         it "returns converted html" do
-          is_expected.to eq "<h1>heading1</h1>"
+          is_expected.to eq "<body><h1>heading1</h1></body>"
         end
       end
     end
@@ -80,7 +83,7 @@ a {
 
       context "with css" do
         it "returns converted html" do
-          is_expected.to eq "<h2 style=\"color: #222222; background-color: #222222;\">heading2</h2>"
+          is_expected.to eq "<body style=\"background-color: #000000;\"><h2 style=\"color: #222222; background-color: #222222;\">heading2</h2></body>"
         end
       end
 
@@ -88,7 +91,7 @@ a {
         let(:css) { not_css }
 
         it "returns converted html" do
-          is_expected.to eq "<h2>heading2</h2>"
+          is_expected.to eq "<body><h2>heading2</h2></body>"
         end
       end
     end
@@ -98,7 +101,7 @@ a {
 
       context "with css" do
         it "returns converted html" do
-          is_expected.to eq "<h3 style=\"color: #333333; background-color: #333333;\">heading3</h3>"
+          is_expected.to eq "<body style=\"background-color: #000000;\"><h3 style=\"color: #333333; background-color: #333333;\">heading3</h3></body>"
         end
       end
 
@@ -106,7 +109,7 @@ a {
         let(:css) { not_css }
 
         it "returns converted html" do
-          is_expected.to eq "<h3>heading3</h3>"
+          is_expected.to eq "<body><h3>heading3</h3></body>"
         end
       end
     end
@@ -116,7 +119,7 @@ a {
 
       context "with css" do
         it "returns converted html" do
-          is_expected.to eq "<h4 style=\"color: #444444; background-color: #444444;\">heading4</h4>"
+          is_expected.to eq "<body style=\"background-color: #000000;\"><h4 style=\"color: #444444; background-color: #444444;\">heading4</h4></body>"
         end
       end
 
@@ -124,7 +127,7 @@ a {
         let(:css) { not_css }
 
         it "returns converted html" do
-          is_expected.to eq "<h4>heading4</h4>"
+          is_expected.to eq "<body><h4>heading4</h4></body>"
         end
       end
     end
@@ -134,7 +137,7 @@ a {
 
       context "with css" do
         it "returns converted html" do
-          is_expected.to eq "<h5 style=\"color: #555555; background-color: #555555;\">heading5</h5>"
+          is_expected.to eq "<body style=\"background-color: #000000;\"><h5 style=\"color: #555555; background-color: #555555;\">heading5</h5></body>"
         end
       end
 
@@ -142,7 +145,7 @@ a {
         let(:css) { not_css }
 
         it "returns converted html" do
-          is_expected.to eq "<h5>heading5</h5>"
+          is_expected.to eq "<body><h5>heading5</h5></body>"
         end
       end
     end
@@ -152,7 +155,7 @@ a {
 
       context "with css" do
         it "returns converted html" do
-          is_expected.to eq "<h6 style=\"color: #666666; background-color: #666666;\">heading6</h6>"
+          is_expected.to eq "<body style=\"background-color: #000000;\"><h6 style=\"color: #666666; background-color: #666666;\">heading6</h6></body>"
         end
       end
 
@@ -160,7 +163,7 @@ a {
         let(:css) { not_css }
 
         it "returns converted html" do
-          is_expected.to eq "<h6>heading6</h6>"
+          is_expected.to eq "<body><h6>heading6</h6></body>"
         end
       end
     end
@@ -170,7 +173,7 @@ a {
 
       context "with css" do
         it "returns converted html" do
-          is_expected.to eq "<ul>\n<li style=\"color: #ff0000;\">list1\n</li><li style=\"color: #ff0000;\">list2\n</li></ul>\n"
+          is_expected.to eq "<body style=\"background-color: #000000;\"><ul>\n<li style=\"color: #ff0000;\">list1\n</li><li style=\"color: #ff0000;\">list2\n</li></ul>\n</body>"
         end
       end
 
@@ -178,7 +181,7 @@ a {
         let(:css) { not_css }
 
         it "returns converted html" do
-          is_expected.to eq "<ul>\n<li>list1\n</li><li>list2\n</li></ul>\n"
+          is_expected.to eq "<body><ul>\n<li>list1\n</li><li>list2\n</li></ul>\n</body>"
         end
       end
     end
@@ -188,7 +191,7 @@ a {
 
       context "with css" do
         it "returns converted html" do
-          is_expected.to eq "<p style=\"color: #00ff00;\">This is markdown.</p>"
+          is_expected.to eq "<body style=\"background-color: #000000;\"><p style=\"color: #00ff00;\">This is markdown.</p></body>"
         end
       end
 
@@ -196,7 +199,7 @@ a {
         let(:css) { not_css }
 
         it "returns converted html" do
-          is_expected.to eq "<p>This is markdown.</p>"
+          is_expected.to eq "<body><p>This is markdown.</p></body>"
         end
       end
     end
@@ -206,7 +209,7 @@ a {
 
       context "with css" do
         it "returns converted html" do
-          is_expected.to eq "<p style=\"color: #00ff00;\"><a style=\"color: #00ffff;\" href=\"http://example.com\">link</a></p>"
+          is_expected.to eq "<body style=\"background-color: #000000;\"><p style=\"color: #00ff00;\"><a style=\"color: #00ffff;\" href=\"http://example.com\">link</a></p></body>"
         end
       end
 
@@ -214,7 +217,7 @@ a {
         let(:css) { not_css }
 
         it "returns converted html" do
-          is_expected.to eq "<p><a href=\"http://example.com\">link</a></p>"
+          is_expected.to eq "<body><p><a href=\"http://example.com\">link</a></p></body>"
         end
       end
     end
