@@ -14,7 +14,7 @@ module Sendmark
       end
     end
 
-    def list_item(text, list_type)
+    def list_item(text, _list_type)
       if css_defined_with?("li")
         "<li style=\"#{css_style("li")}\">#{text}</li>"
       else
@@ -30,7 +30,7 @@ module Sendmark
       end
     end
 
-    def link(link, title, content)
+    def link(link, _title, content)
       if css_defined_with?("a")
         "<a style=\"#{css_style("a")}\" href=\"#{link}\">#{content}</a>"
       else
