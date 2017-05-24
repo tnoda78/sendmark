@@ -38,6 +38,14 @@ module Sendmark
       end
     end
 
+    def hrule
+      if css_defined_with?("hr")
+        "<hr style=\"#{css_style("hr")}\">"
+      else
+        "<hr>"
+      end
+    end
+
     private
     def css_style(selector)
       @css_parser.send(selector)

@@ -42,6 +42,9 @@ li {
 a {
   color: #00ffff;
 }
+hr {
+  color: #ffffff;
+}
     EOF
   end
 
@@ -218,6 +221,24 @@ a {
 
         it "returns converted html" do
           is_expected.to eq "<body><p><a href=\"http://example.com\">link</a></p></body>"
+        end
+      end
+    end
+
+    context "with hr render" do
+      let(:text) { "----" }
+
+      context "with css" do
+        it "returns converted html" do
+          is_expected.to eq "<body style=\"background-color: #000000;\"><hr style=\"color: #ffffff;\"></body>"
+        end
+      end
+
+      context "without css" do
+        let(:css) { not_css }
+
+        it "returns converted html" do
+          is_expected.to eq "<body><hr></body>"
         end
       end
     end

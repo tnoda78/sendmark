@@ -52,6 +52,9 @@ a {
 span {
   color: #ff00ff;
 }
+hr {
+  color: #ffffff;
+}
     EOF
   end
 
@@ -130,6 +133,12 @@ span {
   describe "#span" do
     it "returns span style" do
       expect(parser.span).to eq "color: #ff00ff;"
+    end
+  end
+
+  describe "#hr" do
+    it "returns hr style" do
+      expect(parser.hr).to eq "color: #ffffff;"
     end
   end
 end
